@@ -15,6 +15,10 @@ export default defineConfig({
     include: ['./src/**/*.test.ts'],
     globals: true,
     environment: 'jsdom',
+    coverage: {
+      // exclude: ['src/**/*.test.ts']
+      include: ['src/**/*.ts'],
+    },
   },
   build: {
     // TODO 多个入口 https://github.com/vitejs/vite/discussions/1736

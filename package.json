@@ -17,10 +17,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@vitest/coverage-v8": "^1.5.3",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",

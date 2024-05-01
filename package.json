@@ -42,5 +42,12 @@
     "library",
     "tiny-tool",
     "small-tool"
-  ]
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jackchoumine/petite-utils.git"
+  },
+  "homepage": "https://github.com/jackchoumine/petite-utils?tab=readme-ov-file#petite-utils",
+  "author": "Jack Chou <zhouqijun4job@163.com>"
 }

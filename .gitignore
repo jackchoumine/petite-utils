@@ -25,3 +25,4 @@ dist-ssr
 
 .history
 auto-imports.d.ts
+coverage

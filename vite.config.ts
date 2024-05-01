@@ -3,6 +3,7 @@
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 
+
 export default defineConfig({
   plugins: [
     AutoImport({
@@ -12,6 +13,8 @@ export default defineConfig({
   ],
   test: {
     include: ['./src/**/*.test.ts'],
+    globals: true,
+    environment: 'jsdom',
   },
   build: {
     // TODO 多个入口 https://github.com/vitejs/vite/discussions/1736

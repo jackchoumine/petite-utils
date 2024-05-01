@@ -2,6 +2,8 @@
 
 A collection of small util function in JavaScript.
 
+> WIP. 🚧 DON'T USE IN PRODUCTION.
+
 ## Installation
 
 ```bash

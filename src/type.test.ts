@@ -1,5 +1,18 @@
-import { isFalsy, isFalsyNon0, isFunction, isNumber, isTruthy } from './type';
-
+import {
+  isDate,
+  isError,
+  isFalsy,
+  isFalsyNon0,
+  isFunction,
+  isNull,
+  isNumber,
+  isObject,
+  isPrimitive,
+  isRegExp,
+  isSymbol,
+  isTruthy,
+  isUndefined,
+} from './type'
 
 describe('isNumber', () => {
   it('should return true if the argument is a number', () => {
@@ -136,5 +149,161 @@ describe('isFunction', () => {
     expect(isFunction(/a/)).toBe(false)
     expect(isFunction(null)).toBe(false)
     expect(isFunction(undefined)).toBe(false)
+  })
+})
+
+describe('isNull', () => {
+  it('should return true if the argument is null', () => {
+    expect(isNull(null)).toBe(true)
+  })
+
+  it('should return false if the argument is not null', () => {
+    expect(isNull(1)).toBe(false)
+    expect(isNull('1')).toBe(false)
+    expect(isNull(true)).toBe(false)
+    expect(isNull([])).toBe(false)
+    expect(isNull({})).toBe(false)
+    expect(isNull(Symbol())).toBe(false)
+    expect(isNull(new Date())).toBe(false)
+    expect(isNull(/a/)).toBe(false)
+    expect(isNull(undefined)).toBe(false)
+  })
+})
+
+describe('isError', () => {
+  it('should return true if the argument is an error', () => {
+    expect(isError(new Error())).toBe(true)
+    expect(isError(new EvalError())).toBe(true)
+    expect(isError(new RangeError())).toBe(true)
+    expect(isError(new ReferenceError())).toBe(true)
+    expect(isError(new SyntaxError())).toBe(true)
+    expect(isError(new TypeError())).toBe(true)
+    expect(isError(new URIError())).toBe(true)
+  })
+
+  it('should return false if the argument is not an error', () => {
+    expect(isError(1)).toBe(false)
+    expect(isError('1')).toBe(false)
+    expect(isError(true)).toBe(false)
+    expect(isError([])).toBe(false)
+    expect(isError({})).toBe(false)
+    expect(isError(Symbol())).toBe(false)
+    expect(isError(new Date())).toBe(false)
+    expect(isError(/a/)).toBe(false)
+    expect(isError(null)).toBe(false)
+    expect(isError(undefined)).toBe(false)
+  })
+})
+
+describe('isDate', () => {
+  it('should return true if the argument is a date', () => {
+    expect(isDate(new Date())).toBe(true)
+  })
+
+  it('should return false if the argument is not a date', () => {
+    expect(isDate(1)).toBe(false)
+    expect(isDate('1')).toBe(false)
+    expect(isDate(true)).toBe(false)
+    expect(isDate([])).toBe(false)
+    expect(isDate({})).toBe(false)
+    expect(isDate(Symbol())).toBe(false)
+    expect(isDate(/a/)).toBe(false)
+    expect(isDate(null)).toBe(false)
+    expect(isDate(undefined)).toBe(false)
+  })
+})
+
+describe('isPrimitive', () => {
+  it('should return true if the argument is a primitive type', () => {
+    expect(isPrimitive(null)).toBe(true)
+    expect(isPrimitive(true)).toBe(true)
+    expect(isPrimitive(false)).toBe(true)
+    expect(isPrimitive(1)).toBe(true)
+    expect(isPrimitive('1')).toBe(true)
+    expect(isPrimitive(Symbol())).toBe(true)
+    expect(isPrimitive(undefined)).toBe(true)
+  })
+
+  it('should return false if the argument is not a primitive type', () => {
+    expect(isPrimitive([])).toBe(false)
+    expect(isPrimitive({})).toBe(false)
+    expect(isPrimitive(new Date())).toBe(false)
+    expect(isPrimitive(/a/)).toBe(false)
+  })
+})
+
+describe('isObject', () => {
+  it('should return true if the argument is an object', () => {
+    expect(isObject({})).toBe(true)
+    expect(isObject([])).toBe(true)
+    expect(isObject(new Date())).toBe(true)
+    expect(isObject(/a/)).toBe(true)
+  })
+
+  it('should return false if the argument is not an object', () => {
+    expect(isObject(null)).toBe(false)
+    expect(isObject(true)).toBe(false)
+    expect(isObject(false)).toBe(false)
+    expect(isObject(1)).toBe(false)
+    expect(isObject('1')).toBe(false)
+    expect(isObject(Symbol())).toBe(false)
+    expect(isObject(undefined)).toBe(false)
+  })
+})
+
+describe('isUndefined', () => {
+  it('should return true if the argument is undefined', () => {
+    expect(isUndefined(undefined)).toBe(true)
+  })
+
+  it('should return false if the argument is not undefined', () => {
+    expect(isUndefined(null)).toBe(false)
+    expect(isUndefined(true)).toBe(false)
+    expect(isUndefined(false)).toBe(false)
+    expect(isUndefined(1)).toBe(false)
+    expect(isUndefined('1')).toBe(false)
+    expect(isUndefined(Symbol())).toBe(false)
+    expect(isUndefined([])).toBe(false)
+    expect(isUndefined({})).toBe(false)
+    expect(isUndefined(new Date())).toBe(false)
+    expect(isUndefined(/a/)).toBe(false)
+  })
+})
+
+describe('isSymbol', () => {
+  it('should return true if the argument is a symbol', () => {
+    expect(isSymbol(Symbol())).toBe(true)
+  })
+
+  it('should return false if the argument is not a symbol', () => {
+    expect(isSymbol(null)).toBe(false)
+    expect(isSymbol(true)).toBe(false)
+    expect(isSymbol(false)).toBe(false)
+    expect(isSymbol(1)).toBe(false)
+    expect(isSymbol('1')).toBe(false)
+    expect(isSymbol([])).toBe(false)
+    expect(isSymbol({})).toBe(false)
+    expect(isSymbol(new Date())).toBe(false)
+    expect(isSymbol(/a/)).toBe(false)
+    expect(isSymbol(undefined)).toBe(false)
+  })
+})
+
+describe('isRegExp', () => {
+  it('should return true if the argument is a regexp', () => {
+    expect(isRegExp(/a/)).toBe(true)
+  })
+
+  it('should return false if the argument is not a regexp', () => {
+    expect(isRegExp(null)).toBe(false)
+    expect(isRegExp(true)).toBe(false)
+    expect(isRegExp(false)).toBe(false)
+    expect(isRegExp(1)).toBe(false)
+    expect(isRegExp('1')).toBe(false)
+    expect(isRegExp([])).toBe(false)
+    expect(isRegExp({})).toBe(false)
+    expect(isRegExp(new Date())).toBe(false)
+    expect(isRegExp(Symbol())).toBe(false)
+    expect(isRegExp(undefined)).toBe(false)
   })
 })

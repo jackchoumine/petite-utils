@@ -1,6 +1,12 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 
+// import { defineConfig } from 'vitest/config'
+
 export default defineConfig({
+  test: {
+    include: ['./src/**/*.test.ts'],
+  },
   build: {
     // TODO 多个入口 https://github.com/vitejs/vite/discussions/1736
     // TODO 目录原样输出

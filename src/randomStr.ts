@@ -1,8 +1,17 @@
-export function randomStr(
-  min: number = 7,
-  max: number = 36,
-  shouldLetterStart = true
-): string {
+export function randomStr(min: number = 7, max: number = 36, shouldStartLetter = true): string {
+  if (
+    typeof min !== 'number' ||
+    typeof max !== 'number' ||
+    typeof shouldStartLetter !== 'boolean'
+  ) {
+    return 'min, max should be number, shouldStartLetter should be boolean'
+  }
+  if (min < 0 || max < 0) {
+    return 'min, max should be positive number'
+  }
+  if (min > max) {
+    return 'min should be less than max'
+  }
   const number = '0123456789'
   const letter = 'abcdefghijklmnopqrstuvwxyz'
   const LETTER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -14,7 +23,7 @@ export function randomStr(
     const index = Math.floor(Math.random() * all.length)
     str += all[index]
   }
-  if (shouldLetterStart && /^[0-9]/.test(str)) {
+  if (shouldStartLetter && /^[0-9]/.test(str)) {
     const index = Math.floor(Math.random() * allLetters.length)
     str = allLetters[index] + str.slice(1)
   }

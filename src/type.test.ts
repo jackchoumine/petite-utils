@@ -1,4 +1,5 @@
-import { isFalsy, isFalsyNon0, isFunction, isNumber, isTruthy } from './type'
+import { isFalsy, isFalsyNon0, isFunction, isNumber, isTruthy } from './type';
+
 
 describe('isNumber', () => {
   it('should return true if the argument is a number', () => {
@@ -17,13 +18,13 @@ describe('isNumber', () => {
         BigInt('0b11111111111111111111111111111111111111111111111111111'),
       ),
     ).toBe(true)
+    expect(isNumber('1')).toBe(true)
   })
 
   it('should return false if the argument is not a number', () => {
     expect(isNumber(NaN)).toBe(false)
     expect(isNumber(Infinity)).toBe(false)
     expect(isNumber(-Infinity)).toBe(false)
-    expect(isNumber('1')).toBe(true)
     expect(isNumber('')).toBe(false)
     expect(isNumber(true)).toBe(false)
     expect(isNumber(false)).toBe(false)

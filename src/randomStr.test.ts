@@ -1,5 +1,6 @@
-import { randomStr } from './randomStr'
 import { describe, expect, it } from 'vitest'
+
+import { randomStr } from './randomStr'
 
 describe('randomStr', () => {
   describe('use default params', () => {

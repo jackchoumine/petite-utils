@@ -5,7 +5,6 @@ import {
   isNullOrUndefined,
   isNumber,
   isObject,
-  isString,
 } from './type'
 
 export function setCookie(

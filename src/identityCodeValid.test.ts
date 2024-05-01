@@ -53,4 +53,18 @@ describe('identityCodeValid', () => {
     const code = '110101199'
     expect(identityCodeValid(code)[0]).toBeFalsy()
   })
+  it('should return false when the identity code is empty', () => {
+    const code = ''
+    expect(identityCodeValid(code)[0]).toBeFalsy()
+    expect(identityCodeValid(code)[1]).toBe('身份证号不能为空')
+    expect(identityCodeValid(0)[1]).toBe('身份证号长度错误, 必须是15位或者18位')
+  })
+  it('should return false when the identity code is []', () => {
+    // @ts-ignore
+    expect(identityCodeValid([])[0]).toBeFalsy()
+    // @ts-ignore
+    expect(identityCodeValid({})[0]).toBeFalsy()
+    const code = '93010119900307611x'
+    expect(identityCodeValid(code)[0]).toBeFalsy()
+  })
 })

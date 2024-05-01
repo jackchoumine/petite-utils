@@ -1,19 +1,22 @@
-import { isBoolean, isNumber } from './type'
+import { isBoolean, isNumber } from './type';
+
 
 export function randomStr(
-  min: number = 7,
-  max: number = 36,
+  min: number | string = 7,
+  max: number | string = 36,
   shouldStartLetter = true,
 ): string {
   if (!isNumber(min) || !isNumber(max) || !isBoolean(shouldStartLetter)) {
     return 'min, max should be number, shouldStartLetter should be boolean'
   }
-  if (min < 0 || max < 0) {
+  if (+min < 0 || +max < 0) {
     return 'min, max should be positive number'
   }
   if (min > max) {
     return 'min should be less than max'
   }
+  min = +min
+  max = +max
   const number = '0123456789'
   const letter = 'abcdefghijklmnopqrstuvwxyz'
   const LETTER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'

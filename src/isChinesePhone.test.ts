@@ -22,4 +22,10 @@ describe('isChinesePhone', () => {
     const phone = '12345678'
     expect(isChinesePhone(phone)).toBeFalsy()
   })
+  it('should return false no number', () => {
+    const phone = ''
+    expect(isChinesePhone(phone)).toBeFalsy()
+    // @ts-ignore
+    expect(isChinesePhone(undefined)).toBeFalsy()
+  })
 })

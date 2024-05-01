@@ -43,11 +43,31 @@ describe('randomStr', () => {
       expect(str).toHaveLength(10)
       expect(isStartWithNumber).toBeTruthy()
     })
+    it('should return a string with letter start', () => {
+      const str = randomStr('10', 10, true)
+      const isStartWithLetter = /^[a-zA-Z]/.test(str)
+      expect(str).toHaveLength(10)
+      expect(isStartWithLetter).toBeTruthy()
+    })
   })
-  describe('use fault params', () => {
+  describe('use incorrect params', () => {
     it('should return "min should be less than max" when min>max', () => {
       const str = randomStr(100, 10, true)
       expect(str).toBe('min should be less than max')
+    })
+    it('should return "min, max should be positive number" when min<0', () => {
+      const str = randomStr(-1, 10, true)
+      expect(str).toBe('min, max should be positive number')
+    })
+    it('should return "min, max should be positive number" when max<0', () => {
+      const str = randomStr(10, -1, true)
+      expect(str).toBe('min, max should be positive number')
+    })
+    it('should return "min, max should be number, shouldStartLetter should be boolean" when min is not number', () => {
+      const str = randomStr('10q', 10, true)
+      expect(str).toBe(
+        'min, max should be number, shouldStartLetter should be boolean',
+      )
     })
   })
 })

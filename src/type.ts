@@ -17,6 +17,7 @@ function isPrimitive(arg: any) {
     arg === null ||
     typeof arg === 'boolean' ||
     typeof arg === 'number' ||
+    typeof arg === 'bigint' ||
     typeof arg === 'string' ||
     typeof arg === 'symbol' || // ES6 symbol
     typeof arg === 'undefined'
@@ -51,7 +52,19 @@ function isNullOrUndefined(arg: any) {
 }
 
 function isNumber(arg: any) {
-  return typeof arg === 'number'
+  // NaN, Infinity, -Infinity
+  // NaN - NaN  =  NaN
+  // Infinity - Infinity = NaN
+  // -Infinity - -Infinity = NaN
+  // Infinity * 0 = NaN
+  // NaN * 0 = NaN
+  // -Infinity * 0 = NaN
+  if (typeof arg === 'number') return arg * 0 === 0
+  if (typeof arg === 'bigint') return true
+  if (isString(arg) && arg.trim() !== '') {
+    return Number.isFinite ? Number.isFinite(+arg) : isFinite(+arg)
+  }
+  return false
 }
 
 function isString(arg: any) {
@@ -70,6 +83,18 @@ function isRegExp(value: any) {
   return type(value) === 'regexp'
 }
 
+function isFalsy(arg: any) {
+  return !arg // 0 '' NaN null undefined
+}
+
+function isFalsyNon0(arg: any) {
+  return !arg && arg !== 0
+}
+
+function isTruthy(arg: any) {
+  return !!arg
+}
+
 export {
   type,
   isObject,
@@ -78,11 +103,14 @@ export {
   isDate,
   isError,
   isNull,
+  isUndefined,
   isNullOrUndefined,
   isNumber,
   isString,
   isSymbol,
-  isUndefined,
   isRegExp,
   isPrimitive,
+  isFalsy,
+  isFalsyNon0,
+  isTruthy,
 }

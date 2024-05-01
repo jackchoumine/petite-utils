@@ -1,5 +1,6 @@
 import {
   isDate,
+  isEmptyStr,
   isError,
   isFalsy,
   isFalsyNon0,
@@ -305,5 +306,11 @@ describe('isRegExp', () => {
     expect(isRegExp(new Date())).toBe(false)
     expect(isRegExp(Symbol())).toBe(false)
     expect(isRegExp(undefined)).toBe(false)
+  })
+})
+
+describe('isEmptyStr', () => {
+  it('should return true if the argument is an empty string', () => {
+    expect(isEmptyStr('')).toBe(true)
   })
 })

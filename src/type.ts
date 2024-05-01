@@ -71,6 +71,9 @@ function isString(arg: any) {
   return typeof arg === 'string'
 }
 
+function isEmptyStr(arg: any) {
+  return arg === ''
+}
 function isSymbol(arg: any) {
   return typeof arg === 'symbol'
 }
@@ -106,6 +109,7 @@ function isFunction(value: any) {
   }
   return false
 }
+
 export {
   type,
   isObject,
@@ -125,4 +129,6 @@ export {
   isFalsyNon0,
   isTruthy,
   isFunction,
+  isEmptyStr,
 }
+

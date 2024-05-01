@@ -95,6 +95,17 @@ function isTruthy(arg: any) {
   return !!arg
 }
 
+function isFunction(value: any) {
+  if (isNullOrUndefined(value)) return false
+  if (value) {
+    return (
+      type(value) === 'function' ||
+      'function' === typeof value ||
+      value instanceof Function
+    )
+  }
+  return false
+}
 export {
   type,
   isObject,
@@ -113,4 +124,5 @@ export {
   isFalsy,
   isFalsyNon0,
   isTruthy,
+  isFunction,
 }

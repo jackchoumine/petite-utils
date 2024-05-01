@@ -1,4 +1,4 @@
-import { isFalsy, isFalsyNon0, isNumber, isTruthy } from './type'
+import { isFalsy, isFalsyNon0, isFunction, isNumber, isTruthy } from './type'
 
 describe('isNumber', () => {
   it('should return true if the argument is a number', () => {
@@ -99,5 +99,41 @@ describe('isFalsyNon0', () => {
     expect(isFalsyNon0(Symbol())).toBe(false)
     expect(isFalsyNon0(new Date())).toBe(false)
     expect(isFalsyNon0(/a/)).toBe(false)
+  })
+})
+
+describe('isFunction', () => {
+  it('should return true if the argument is a function', () => {
+    expect(isFunction(() => {})).toBe(true)
+    expect(isFunction(function () {})).toBe(true)
+    expect(isFunction(function* () {})).toBe(true)
+    expect(isFunction(async () => {})).toBe(true)
+    expect(isFunction(async function () {})).toBe(true)
+    expect(isFunction(async function* () {})).toBe(true)
+    expect(isFunction(new Function())).toBe(true)
+    expect(isFunction(class {})).toBe(true)
+    expect(isFunction(Function)).toBe(true)
+    expect(isFunction(Array)).toBe(true)
+    expect(isFunction(Object)).toBe(true)
+    expect(isFunction(String)).toBe(true)
+    expect(isFunction(Number)).toBe(true)
+    expect(isFunction(Boolean)).toBe(true)
+    expect(isFunction(Error)).toBe(true)
+    expect(isFunction(Symbol)).toBe(true)
+    expect(isFunction(Promise)).toBe(true)
+    expect(isFunction(Date)).toBe(true)
+  })
+
+  it('should return false if the argument is not a function', () => {
+    expect(isFunction(1)).toBe(false)
+    expect(isFunction('1')).toBe(false)
+    expect(isFunction(true)).toBe(false)
+    expect(isFunction([])).toBe(false)
+    expect(isFunction({})).toBe(false)
+    expect(isFunction(Symbol())).toBe(false)
+    expect(isFunction(new Date())).toBe(false)
+    expect(isFunction(/a/)).toBe(false)
+    expect(isFunction(null)).toBe(false)
+    expect(isFunction(undefined)).toBe(false)
   })
 })

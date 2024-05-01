@@ -1,9 +1,11 @@
-export function randomStr(min: number = 7, max: number = 36, shouldStartLetter = true): string {
-  if (
-    typeof min !== 'number' ||
-    typeof max !== 'number' ||
-    typeof shouldStartLetter !== 'boolean'
-  ) {
+import { isBoolean, isNumber } from './type'
+
+export function randomStr(
+  min: number = 7,
+  max: number = 36,
+  shouldStartLetter = true,
+): string {
+  if (!isNumber(min) || !isNumber(max) || !isBoolean(shouldStartLetter)) {
     return 'min, max should be number, shouldStartLetter should be boolean'
   }
   if (min < 0 || max < 0) {

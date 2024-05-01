@@ -1,2 +1,5 @@
 export * from './src/randomStr'
 export * from './src/uuid'
+export * from './src/isChinesePhone'
+export * from './src/type'
+export * from './src/identityCodeValid'

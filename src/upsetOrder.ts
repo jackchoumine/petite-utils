@@ -4,7 +4,8 @@ export function upsetOrder<T>(arr: T[], from: number = 0): T[] {
   }
 
   if (from < 0 || from >= arr.length) {
-    return arr
+    // deep copy
+    return arr.slice(0, arr.length)
   }
 
   const unChangePart = arr.slice(0, from)

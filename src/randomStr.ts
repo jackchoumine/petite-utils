@@ -27,5 +27,9 @@ export function randomStr(min: number = 7, max: number = 36, shouldStartLetter =
     const index = Math.floor(Math.random() * allLetters.length)
     str = allLetters[index] + str.slice(1)
   }
+  if (!shouldStartLetter && /^[a-zA-Z]/.test(str)) {
+    const index = Math.floor(Math.random() * number.length)
+    str = number[index] + str.slice(1)
+  }
   return str
 }

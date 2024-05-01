@@ -1,4 +1,5 @@
-import { randomStr } from './randomStr'
+import { randomStr } from './randomStr';
+
 
 describe('randomStr', () => {
   describe('use default params', () => {
@@ -32,9 +33,15 @@ describe('randomStr', () => {
     it('should return a string of random length between 20 to 30 and start with number or letter', () => {
       const str = randomStr(20, 30, false)
       const isBetween20and30 = str.length >= 20 && str.length <= 30
-      const isStartWithLetter = /^[a-zA-Z0-9]/.test(str)
+      const isStartWithLetter = /^[0-9]/.test(str)
       expect(isBetween20and30).toBeTruthy()
       expect(isStartWithLetter).toBeTruthy()
+    })
+    it('should return a string with number start', () => {
+      const str = randomStr(10, 11, false)
+      const isStartWithNumber = /^[0-9]/.test(str)
+      expect(str).toHaveLength(10)
+      expect(isStartWithNumber).toBeTruthy()
     })
   })
   describe('use fault params', () => {

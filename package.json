@@ -22,5 +22,18 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "keywords": [
+    "debounce",
+    "throttle",
+    "petite-utils",
+    "petite",
+    "petite-vue",
+    "utils",
+    "utility",
+    "tool",
+    "library",
+    "tiny-tool",
+    "small-tool"
+  ]
 }

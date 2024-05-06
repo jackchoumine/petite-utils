@@ -1,6 +1,6 @@
 {
   "name": "petite-utils",
-  "version": "0.0.3",
+  "version": "0.0.3-1",
   "private": false,
   "type": "module",
   "source": "src/index.ts",

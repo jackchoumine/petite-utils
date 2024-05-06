@@ -74,9 +74,11 @@ function isString(arg: any) {
 function isEmptyStr(arg: any) {
   return arg === ''
 }
+
 function hasStr(arg: any) {
   return isString(arg) && arg !== ''
 }
+
 function isSymbol(arg: any) {
   return typeof arg === 'symbol'
 }
@@ -133,6 +135,5 @@ export {
   isTruthy,
   isFunction,
   isEmptyStr,
-  hasStr
+  hasStr as isNonEmptyStr,
 }
-

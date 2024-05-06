@@ -3,27 +3,32 @@
   "version": "0.0.3",
   "private": false,
   "type": "module",
+  "source": "src/index.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "unpkg": "./dist/index.umd.js",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "build": "microbundle"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/coverage-v8": "^1.5.3",
     "jsdom": "^24.0.0",
+    "microbundle": "^0.15.1",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.5",

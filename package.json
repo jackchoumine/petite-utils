@@ -4,6 +4,7 @@
   "private": false,
   "type": "module",
   "source": "src/index.ts",
+  "amdName": "PU",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "unpkg": "./dist/index.umd.js",

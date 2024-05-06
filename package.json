@@ -1,6 +1,6 @@
 {
   "name": "petite-utils",
-  "version": "0.0.3-2",
+  "version": "0.0.3-3",
   "private": false,
   "type": "module",
   "source": "src/index.ts",
@@ -16,7 +16,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "!src/**/*.test.(ts|js)"
   ],
   "scripts": {
     "dev": "vite",

@@ -22,6 +22,36 @@ pnpm add petite-utils
 
 ## Usage
 
+```js
+// cjs module
+const { randomStr } = require('petite-utils')
+// ES module
+import { randomStr } from 'petite-utils'
+```
+
+> use `esm` in html by cdn
+
+```html
+<!-- load ES module -->
+<script type="module">
+  import { randomStr } from 'https://unpkg.com/petite-utils/dist/index.js'
+  const result = randomStr(20, 50)
+  console.log(result)
+  console.log('test in browser using esm')
+</script>
+```
+
+> use `umd` in html by cdn
+
+```html
+<!-- load umd -->
+<script src="https://unpkg.com/petite-utils"></script>
+<!-- then use function from PU object -->
+<script>
+  const str = PU.randomStr()
+</script>
+```
+
 ### isNumber
 
 > check if the value is a number.

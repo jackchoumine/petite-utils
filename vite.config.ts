@@ -5,21 +5,7 @@ import { defineConfig } from 'vite'
 
 
 export default defineConfig({
-  plugins: [
-    AutoImport({
-      dts: 'src/auto-imports.d.ts',
-      imports: ['vitest'],
-    }),
-  ],
-  test: {
-    include: ['./src/**/*.test.ts'],
-    globals: true,
-    environment: 'jsdom',
-    coverage: {
-      // exclude: ['src/**/*.test.ts']
-      include: ['src/**/*.ts'],
-    },
-  },
+
   build: {
     // TODO 多个入口 https://github.com/vitejs/vite/discussions/1736
     // TODO 目录原样输出

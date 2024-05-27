@@ -2,8 +2,15 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 03:00:17
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 03:02:38
+ * @LastEditTime: 2024-05-28 04:13:07
  * @Description : 防抖
+ */
+/**
+ * debounce function
+ * @param fn function need to debounce
+ * @param wait debounce time default 500ms
+ * @param isImmediate if true, execute immediately when trigger, default false
+ * @returns new function
  */
 export function debounce(fn, wait = 500, isImmediate = false) {
   let timer

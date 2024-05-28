@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-07 02:52:14
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 03:54:52
+ * @LastEditTime: 2024-05-28 10:38:16
  * @Description : 
 -->
 <!doctype html>
@@ -15,11 +15,12 @@
   </head>
   <body>
     <h1>petite-utils</h1>
+    <button id="copyBtn">复制文本</button>
     <!-- <script type="module" src="/main.js"></script> -->
     <script src="dist/index.umd.js"></script>
     <script>
-      //   import { debounce, throttle } from '/dist/index.js'
-      const { debounce, throttle } = window.PU
+      // import { debounce, throttle } from '/dist/index.js'
+      const { debounce, throttle, copy } = window.PU
       console.log('test in browser using esm')
       const testThrottle = throttle(() => {
         console.log('throttle resize')
@@ -27,8 +28,13 @@
       const testDebounce = debounce(() => {
         console.log('debounce scroll')
       }, 100)
-      document.addEventListener('mousemove', testThrottle)
-      document.addEventListener('mousemove', testDebounce)
+      // document.addEventListener('mousemove', testThrottle)
+      // document.addEventListener('mousemove', testDebounce)
+      copyBtn.addEventListener('click', () => {
+        copy('copy test').then(isOk => {
+          console.log(isOk)
+        })
+      })
     </script>
   </body>
 </html>

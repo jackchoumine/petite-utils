@@ -1,10 +1,17 @@
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-05-28 10:20:30
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2024-07-11 18:35:28
+ * @Description : vitest 配置文件
+ */
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [
     AutoImport({
-      dts: 'src/auto-imports.d.ts',
+      dts: 'auto-imports.d.ts',
       imports: ['vitest'],
     }),
   ],

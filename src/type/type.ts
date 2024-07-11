@@ -51,6 +51,12 @@ function isNullOrUndefined(arg: any) {
   return arg == null
 }
 
+/**
+ * 检查给定的值是否为数字
+ * 是 number 或 bigint，则返回 true，否则返回 false
+ * @param arg - 要检查的值，可以是任何类型
+ * @return 如果是数字或 BigInt，则返回 true，否则返回 false
+ */
 function isNumber(arg: any) {
   // NaN, Infinity, -Infinity
   // NaN - NaN  =  NaN
@@ -63,7 +69,12 @@ function isNumber(arg: any) {
   if (typeof arg === 'bigint') return true
   return false
 }
-
+/**
+ * 检查给定的值是否为数值，包括数字、字符串数字 和 BigInt
+ * 此外，如果给定值是一个非空字符串，它将尝试将其转换为数字并检查其有效性
+ * @param arg - 要检查的值，可以是任何类型
+ * @return 如果是数字或可转换为有效数字的字符串，则返回 true，否则返回 false
+ */
 function isNumerical(arg: any) {
   if (typeof arg === 'number') return arg * 0 === 0
   if (typeof arg === 'bigint') return true

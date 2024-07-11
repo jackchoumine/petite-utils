@@ -1,4 +1,4 @@
-import { isNumber, isString } from './type'
+import { isNumber, isString } from './type/type'
 
 export function normalizeMoney(money: number | string): string {
   if ((!isNumber(money) && !isString(money)) || money === '') {

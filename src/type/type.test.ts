@@ -7,6 +7,7 @@ import {
   isFunction,
   isNull,
   isNumber,
+  isNumerical,
   isObject,
   isPrimitive,
   isRegExp,
@@ -32,7 +33,25 @@ describe('isNumber', () => {
         BigInt('0b11111111111111111111111111111111111111111111111111111'),
       ),
     ).toBe(true)
-    expect(isNumber('1')).toBe(true)
+    expect(isNumber('1')).toBe(false)
+  })
+  it('should return true if the argument is a number or string number', () => {
+    expect(isNumerical(1)).toBe(true)
+    expect(isNumerical(0)).toBe(true)
+    expect(isNumerical(-1)).toBe(true)
+    expect(isNumerical(1.1)).toBe(true)
+    expect(isNumerical(-1.1)).toBe(true)
+    expect(isNumerical(4.917736942280289e-10)).toBe(true)
+    expect(
+      isNumerical(0b11111111111111111111111111111111111111111111111111111),
+    ).toBe(true)
+    expect(isNumerical(0o3777777777777777777777)).toBe(true)
+    expect(
+      isNumerical(
+        BigInt('0b11111111111111111111111111111111111111111111111111111'),
+      ),
+    ).toBe(true)
+    expect(isNumerical('1')).toBe(true)
   })
 
   it('should return false if the argument is not a number', () => {

@@ -5,7 +5,7 @@
  * @LastEditTime: 2024-05-28 02:56:46
  * @Description : 深复制
  */
-import { type } from './type'
+import { type } from './type/type'
 
 // import from from 'core-js/features/array/from'
 /**

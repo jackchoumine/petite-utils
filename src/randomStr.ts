@@ -1,5 +1,4 @@
-import { isBoolean, isNumber } from './type';
-
+import { isBoolean, isNumber } from './type/type'
 
 export function randomStr(
   min: number | string = 7,

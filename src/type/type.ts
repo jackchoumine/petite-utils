@@ -61,6 +61,12 @@ function isNumber(arg: any) {
   // -Infinity * 0 = NaN
   if (typeof arg === 'number') return arg * 0 === 0
   if (typeof arg === 'bigint') return true
+  return false
+}
+
+function isNumerical(arg: any) {
+  if (typeof arg === 'number') return arg * 0 === 0
+  if (typeof arg === 'bigint') return true
   if (isString(arg) && arg.trim() !== '') {
     return Number.isFinite ? Number.isFinite(+arg) : isFinite(+arg)
   }
@@ -126,6 +132,7 @@ export {
   isUndefined,
   isNullOrUndefined,
   isNumber,
+  isNumerical,
   isString,
   isSymbol,
   isRegExp,

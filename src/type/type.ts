@@ -154,4 +154,5 @@ export {
   isFunction,
   isEmptyStr,
   hasStr as isNonEmptyStr,
+  hasStr,
 }

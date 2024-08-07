@@ -26,9 +26,15 @@
     "coverage": "vitest run --coverage",
     "build": "microbundle"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/coverage-v8": "^1.5.3",
+    "cz-git": "^1.9.4",
     "jsdom": "^24.0.0",
     "microbundle": "^0.15.1",
     "prettier": "^3.2.5",

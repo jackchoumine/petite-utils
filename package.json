@@ -24,7 +24,8 @@
     "dev": "vite",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "build": "microbundle"
+    "build": "microbundle",
+    "release": "release-it"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",

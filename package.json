@@ -30,6 +30,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/coverage-v8": "^1.5.3",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "jsdom": "^24.0.0",
     "microbundle": "^0.15.1",
     "prettier": "^3.2.5",
@@ -57,5 +58,10 @@
     "url": "https://github.com/jackchoumine/petite-utils.git"
   },
   "homepage": "https://github.com/jackchoumine/petite-utils?tab=readme-ov-file#petite-utils",
-  "author": "Jack Chou <zhouqijun4job@163.com>"
+  "author": "Jack Chou <zhouqijun4job@163.com>",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

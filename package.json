@@ -25,14 +25,18 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "build": "microbundle",
-    "release": "release-it"
+    "release": "release-it",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@release-it/conventional-changelog": "^8.0.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/coverage-v8": "^1.5.3",
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.2.1",
+    "husky": "^9.1.4",
     "jsdom": "^24.0.0",
     "microbundle": "^0.15.1",
     "prettier": "^3.2.5",

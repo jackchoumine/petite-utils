@@ -30,7 +30,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitest/coverage-v8": "^1.5.3",
     "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.2.1",
     "jsdom": "^24.0.0",
     "microbundle": "^0.15.1",
     "prettier": "^3.2.5",
@@ -61,7 +61,10 @@
   "author": "Jack Chou <zhouqijun4job@163.com>",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
     }
   }
 }

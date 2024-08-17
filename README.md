@@ -92,3 +92,17 @@ getCookie('obj') // get cookie by name. {age:10}
 
 setCookie('array', [{ name: 'petite-utils' }], 0.5) // set cookie with array 
 ```
+
+### chunk
+
+> split array into chunks.
+
+```js
+import {
+    chunk
+} from 'petite-utils'
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const result = chunk(arr, 3)
+console.log(result) // [[1,2,3],[4,5,6],[7,8,9]]
+```

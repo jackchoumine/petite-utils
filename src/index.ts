@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-01 14:23:35
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 10:29:04
+ * @LastEditTime: 2024-08-18 01:00:41
  * @Description : 统一导出
  */
 export * from './randomStr'
@@ -18,3 +18,4 @@ export * from './clone'
 export * from './debounce'
 export * from './throttle'
 export * from './copy'
+export * from './chunk'

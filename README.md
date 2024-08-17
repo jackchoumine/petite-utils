@@ -106,3 +106,15 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const result = chunk(arr, 3)
 console.log(result) // [[1,2,3],[4,5,6],[7,8,9]]
 ```
+
+### copy
+
+> copy some text to clipboard.
+
+```js
+import {
+    copy
+} from 'petite-utils'
+const text = 'copy this text to clipboard'
+copy(text) // copy text to clipboard
+```

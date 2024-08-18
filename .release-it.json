@@ -7,7 +7,8 @@
     "commitMessage": "release: v${version}"
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "timeout": 60000
   },
   "plugins": {
     "@release-it/conventional-changelog": {

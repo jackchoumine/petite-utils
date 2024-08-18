@@ -8,7 +8,8 @@
   },
   "npm": {
     "publish": true,
-    "timeout": 60000
+    "timeout": 60000,
+    "tag": null
   },
   "plugins": {
     "@release-it/conventional-changelog": {

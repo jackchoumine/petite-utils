@@ -60,6 +60,9 @@
     "tiny-tool",
     "small-tool"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",

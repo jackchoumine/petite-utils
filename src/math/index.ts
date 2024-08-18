@@ -29,6 +29,7 @@ function modulo(m: number, n: number): number {
  * @param dividend
  * @param divisor
  * @returns remainder
+ * @link https://stackoverflow.com/questions/38702724/math-floor-vs-math-trunc-javascript
  */
 function remainder(dividend: number, divisor: number): number {
   const quotient = Math.trunc(dividend / divisor)

@@ -25,10 +25,10 @@
             "type": "fix",
             "section": "🐛修复bug"
           },
-          {
-            "type": "docs",
-            "section": "📚更新文档"
-          },
+          // {
+          //   "type": "docs",
+          //   "section": "📚更新文档"
+          // },
           {
             "type": "BREAKING CHANGE",
             "section": "💥重大变更"

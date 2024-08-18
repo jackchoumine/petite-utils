@@ -19,4 +19,20 @@ function modulo(m: number, n: number): number {
   return ((m % n) + n) % n
 }
 
-export { modulo }
+/**
+ * m remainder n 取余数
+ * @example
+ * remainder(7, 3) // 1
+ * remainder(-7, 3) // -1
+ * remainder(7, -3) // 1
+ * remainder(-7, -3) // -1
+ * @param dividend
+ * @param divisor
+ * @returns remainder
+ */
+function remainder(dividend: number, divisor: number): number {
+  const quotient = Math.trunc(dividend / divisor)
+  return dividend - divisor * quotient
+}
+
+export { modulo, remainder }

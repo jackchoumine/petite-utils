@@ -36,3 +36,18 @@ describe('Test modulo function', () => {
     expect(modulo(15, 4)).toBe(3)
   })
 })
+
+describe('Test remainder function', () => {
+  it('remainder of 7 and 3 should be 1', () => {
+    expect(remainder(7, 3)).toBe(1)
+  })
+  it('remainder of 7 and 3 should be 1', () => {
+    expect(remainder(-7, 3)).toBe(-1)
+  })
+  it('remainder of 7 and 3 should be 1', () => {
+    expect(remainder(7, -3)).toBe(1)
+  })
+  it('remainder of 7 and 3 should be 1', () => {
+    expect(remainder(-7, -3)).toBe(-1)
+  })
+})

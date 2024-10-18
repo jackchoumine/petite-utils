@@ -47,7 +47,8 @@ function isNull(arg: any) {
   return arg === null
 }
 
-function isNullOrUndefined(arg: any) {
+function isNullish(arg: any) {
+  // https://stackoverflow.com/a/46716365/6524962
   return arg == null
 }
 
@@ -121,7 +122,7 @@ function isTruthy(arg: any) {
 }
 
 function isFunction(value: any) {
-  if (isNullOrUndefined(value)) return false
+  if (isNullish(value)) return false
   if (value) {
     return (
       type(value) === 'function' ||
@@ -141,7 +142,8 @@ export {
   isError,
   isNull,
   isUndefined,
-  isNullOrUndefined,
+  isNullish,
+  isNullish as isNullOrUndefined,
   isNumber,
   isNumerical,
   isString,

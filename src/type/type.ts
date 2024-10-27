@@ -143,7 +143,6 @@ export {
   isNull,
   isUndefined,
   isNullish,
-  isNullish as isNullOrUndefined,
   isNumber,
   isNumerical,
   isString,

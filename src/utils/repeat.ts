@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 01:37:24
+ * @LastEditTime: 2024-10-28 01:41:29
  * @Description : repeat 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -39,7 +39,7 @@ export interface RepeatOptions {
  * if (repeatTimes === 5) {
  *    stop() // stop function from fn params
  *  }
- * }, { interval: 1000 })
+ * })
  * ```
  * @example
  * ### pass a function definition to repeat and stop it by repeat return value

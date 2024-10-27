@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 01:41:29
+ * @LastEditTime: 2024-10-28 01:50:15
  * @Description : repeat 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -86,3 +86,28 @@ export function repeat(
   }, interval)
   return stop
 }
+
+// 函数定义和函数表达式的区别
+// 函数定义会被提升，var 的函数表达式不会被提升，let const 的函数表达式不会被提升
+// let stop = repeat(hello)
+// // this is ok, because function definition is hoisted
+// function hello(_, times) {
+//   console.log('hello', times)
+//   if (times === 10) {
+//     stop()
+//   }
+// }
+// // this is not ok, because var initialization is hoisted  ❌
+// var hello = function (_, time) {
+//   console.log('hello', times)
+//   if (times === 10) {
+//     stop()
+//   }
+// }
+//  // this is not ok, because let and const variable are not hoisted ❌
+// let hello = (_, time) => {
+//   console.log('hello', times)
+//   if (times === 10) {
+//     stop()
+//   }
+// }

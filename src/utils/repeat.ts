@@ -2,8 +2,8 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 01:50:15
- * @Description : repeat 函数 - 重复执行函数
+ * @LastEditTime: 2024-10-28 16:43:36
+ * @Description : repeatRun 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
 import { isFunction, isNumber } from '../type/type'
@@ -53,7 +53,7 @@ export interface RepeatOptions {
  * }
  * ```
  */
-export function repeat(
+export function repeatRun(
   fn: RepeatFn,
   { interval = 1000, immediate = false }: RepeatOptions = {},
   params,

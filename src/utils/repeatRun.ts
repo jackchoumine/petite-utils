@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 16:43:36
+ * @LastEditTime: 2024-10-28 18:15:20
  * @Description : repeatRun 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -34,7 +34,7 @@ export interface RepeatOptions {
  * @example
  * ### pass a arrow function to repeat
  * ```ts
- * repeat((stop, repeatTimes) => {
+ * repeatRun((stop, repeatTimes) => {
  *  console.log(repeatTimes)
  * if (repeatTimes === 5) {
  *    stop() // stop function from fn params
@@ -44,7 +44,7 @@ export interface RepeatOptions {
  * @example
  * ### pass a function definition to repeat and stop it by repeat return value
  * ```ts
- * let stop = repeat(sayHi, { interval: 1000 })
+ * let stop = repeatRun(sayHi, { interval: 1000 })
  * function sayHi(_, repeatTimes) {
  *  console.log(repeatTimes)
  *  if (repeatTimes === 5) {

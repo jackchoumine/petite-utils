@@ -27,7 +27,10 @@
     "coverage": "vitest run --coverage",
     "build": "microbundle",
     "release": "release-it",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
@@ -45,6 +48,7 @@
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.5",
     "vite": "^5.2.0",
+    "vitepress": "^1.4.1",
     "vitest": "^1.5.3"
   },
   "keywords": [

@@ -10,11 +10,14 @@
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
     <script type="module">
-      import { sum } from '/node_modules/petite-utils/dist/index.js';
-      // console.log(window)
-      const result = sum(10, 20);
-      console.log(result);
-      console.log('test in browser using esm')
+      import { repeat } from '/node_modules/petite-utils/dist/index.js'
+
+      repeat((stop, repeatTimes) => {
+        console.log('repeatTimes:', repeatTimes)
+        if (repeatTimes > 5) {
+          stop()
+        }
+      })
     </script>
   </body>
 </html>

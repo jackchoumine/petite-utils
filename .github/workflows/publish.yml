@@ -4,8 +4,8 @@ name: Publish Package to npmjs # Name of the workflow
 
 on: # Event that triggers the workflow
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
     tags:
       - 'v*'
 # Jobs that run in the workflow

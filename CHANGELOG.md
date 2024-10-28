@@ -1,5 +1,12 @@
 
 
+## [0.0.10](https://github.com/jackchoumine/petite-utils/compare/0.0.9...0.0.10) (2024-10-28)
+
+
+### ✨新增功能
+
+* repeatRun 重复执行函数 ([80520b2](https://github.com/jackchoumine/petite-utils/commit/80520b2cf4f949f21d7e2bfdce030f2928225247))
+
 ## 0.0.9 (2024-10-28)
 
 ## 0.0.7 (2024-10-28)

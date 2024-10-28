@@ -6,8 +6,8 @@ on: # Event that triggers the workflow
   push:
     branches:
       - master
-    tags:
-      - 'v*'
+    # tags:
+    #   - 'v*'
 # Jobs that run in the workflow
 jobs:
   # build job

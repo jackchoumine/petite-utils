@@ -26,7 +26,7 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "build": "microbundle",
-    "release": "release-it -ci",
+    "release": "release-it",
     "prepare": "husky"
   },
   "devDependencies": {

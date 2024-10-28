@@ -26,6 +26,7 @@ jobs:
       - run: npm i -D husky@^9.1.6
       - run: npm ci
       - run: npm run build
-      - run: npm run release
+      - run: npx release-it --ci
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

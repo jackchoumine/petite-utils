@@ -25,6 +25,8 @@ jobs:
       - run: npm install -g npm
       - run: npm i -D husky@^9.1.6
       - run: npm ci
+      - run: git config user.email "zhouqijun4job@163.com"
+      - run: git config user.name "release-auto"
       - run: npx release-it --ci
       - run: npm run build
       - run: npm publish

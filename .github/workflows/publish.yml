@@ -4,10 +4,10 @@ name: Publish Package to npmjs # Name of the workflow
 
 on: # Event that triggers the workflow
   push:
-    # tags:
-    #   - 'v*'
     branches:
       - master
+    tags:
+      - 'v*'
 # Jobs that run in the workflow
 jobs:
   # build job
@@ -26,6 +26,6 @@ jobs:
       - run: npm i -D husky@^9.1.6
       - run: npm ci
       - run: npm run build
-      - run: npm publish
+      - run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

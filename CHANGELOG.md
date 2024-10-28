@@ -1,5 +1,7 @@
 
 
+## 0.0.8 (2024-10-28)
+
 ## 0.0.7 (2024-10-28)
 
 ## [0.0.5-3](https://github.com/jackchoumine/petite-utils/compare/v0.0.5-2...v0.0.5-3) (2024-08-18)

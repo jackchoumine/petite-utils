@@ -1,6 +1,6 @@
 {
   "name": "petite-utils",
-  "version": "0.0.7-0",
+  "version": "0.0.7",
   "private": false,
   "type": "module",
   "source": "src/index.ts",
@@ -37,7 +37,7 @@
     "@vitest/coverage-v8": "^1.5.3",
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.2.1",
-    "husky": "^9.1.4",
+    "husky": "^9.1.6",
     "jsdom": "^24.0.0",
     "microbundle": "^0.15.1",
     "prettier": "^3.2.5",

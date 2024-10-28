@@ -10,8 +10,27 @@ on: # Event that triggers the workflow
     #   - 'v*'
 # Jobs that run in the workflow
 jobs:
-  # build job
-  build:
+  # release npm
+  publish-npm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install -g npm
+      - run: npm i -D husky@^9.1.6
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # release github
+  publish-github:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,7 +47,3 @@ jobs:
       - run: git config user.email "zhouqijun4job@163.com"
       - run: git config user.name "release-auto"
       - run: npx release-it --ci
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

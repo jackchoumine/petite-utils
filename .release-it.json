@@ -4,10 +4,11 @@
     "release": true
   },
   "git": {
-    "commitMessage": "release: v${version}"
+    "commitMessage": "release: v${version}",
+    "requireCleanWorkingDir": false
   },
   "npm": {
-    "publish": false
+    "publish": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {

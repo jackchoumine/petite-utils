@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 18:15:20
+ * @LastEditTime: 2024-11-25 00:53:08
  * @Description : repeatRun 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -14,10 +14,10 @@ import { isFunction, isNumber } from '../type/type'
 export type StopRepeat = () => void
 
 export type RepeatFn = (
-  stop: StopRepeat,
   repeatTimes: number,
+  stop: StopRepeat,
   params?: unknown,
-) => StopRepeat
+) => void
 
 export interface RepeatOptions {
   interval?: number
@@ -34,7 +34,7 @@ export interface RepeatOptions {
  * @example
  * ### pass a arrow function to repeat
  * ```ts
- * repeatRun((stop, repeatTimes) => {
+ * repeatRun((repeatTimes, stop) => {
  *  console.log(repeatTimes)
  * if (repeatTimes === 5) {
  *    stop() // stop function from fn params
@@ -45,10 +45,10 @@ export interface RepeatOptions {
  * ### pass a function definition to repeat and stop it by repeat return value
  * ```ts
  * let stop = repeatRun(sayHi, { interval: 1000 })
- * function sayHi(_, repeatTimes) {
+ * function sayHi(repeatTimes) {
  *  console.log(repeatTimes)
  *  if (repeatTimes === 5) {
- *   stop() // stop from repeat return value
+ *   stop() // stop from repeatRun return value
  *  }
  * }
  * ```
@@ -56,8 +56,8 @@ export interface RepeatOptions {
 export function repeatRun(
   fn: RepeatFn,
   { interval = 1000, immediate = false }: RepeatOptions = {},
-  params,
-) {
+  params?: unknown,
+): StopRepeat {
   if (!isFunction(fn)) {
     throw new Error('first argument must be a function')
   }
@@ -74,14 +74,14 @@ export function repeatRun(
   let repeatTimes = 0
   if (immediate) {
     ++repeatTimes
-    fn(stop, repeatTimes, params)
+    fn(repeatTimes, stop, params)
   }
   let timer = setTimeout(function repeatMe() {
     if (hasStopped) {
       return
     }
     ++repeatTimes
-    fn(stop, repeatTimes, params)
+    fn(repeatTimes, stop, params)
     timer2 = setTimeout(repeatMe, interval)
   }, interval)
   return stop

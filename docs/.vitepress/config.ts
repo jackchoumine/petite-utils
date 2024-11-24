@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 16:59:54
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-10-28 17:40:20
+ * @LastEditTime: 2024-11-25 00:08:45
  * @Description :
  */
 import { defineConfig } from 'vitepress'
@@ -31,5 +31,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
+  },
+  markdown: {
+    lineNumbers: true,
   },
 })

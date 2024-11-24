@@ -1,5 +1,7 @@
 
 
+## [0.0.14](https://github.com/jackchoumine/petite-utils/compare/v0.0.13...v0.0.14) (2024-11-24)
+
 ## [0.0.10](https://github.com/jackchoumine/petite-utils/compare/0.0.9...0.0.10) (2024-10-28)
 
 

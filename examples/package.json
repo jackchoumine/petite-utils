@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "npx http-server ./ -p 8090 -o",
     "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "petite-utils": "^0.0.8"
+    "petite-utils": "workspace:^"
   }
 }

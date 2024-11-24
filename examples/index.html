@@ -1,3 +1,10 @@
+<!--
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-11-24 23:56:30
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2024-11-25 00:27:41
+ * @Description : 测试页面
+-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,9 +18,9 @@
     <h2>petite-utils example</h2>
     <script type="module" src="/main.js"></script>
     <script type="module">
-      import { repeat } from '/node_modules/petite-utils/dist/index.js'
+      import { repeatRun } from '/node_modules/petite-utils/dist/index.js'
 
-      repeat((stop, repeatTimes) => {
+      repeatRun((stop, repeatTimes) => {
         console.log('Hello, petite-utils! (ESM module)')
         if (repeatTimes > 5) {
           stop()
@@ -23,7 +30,7 @@
     <script src="/node_modules/petite-utils/dist/index.umd.js"></script>
     <script>
       // 每隔 1 秒输出一次 'Hello, petite-utils!'
-      PU.repeat(fn, {
+      PU.repeatRun(fn, {
         interval: 1000,
         immediate: true,
       })

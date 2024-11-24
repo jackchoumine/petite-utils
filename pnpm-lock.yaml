@@ -60,6 +60,16 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@22.9.3)(jsdom@24.1.3)(terser@5.36.0)
 
+  examples:
+    dependencies:
+      petite-utils:
+        specifier: workspace:^
+        version: link:..
+    devDependencies:
+      vite:
+        specifier: ^5.2.0
+        version: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
+
 packages:
 
   '@algolia/autocomplete-core@1.17.7':

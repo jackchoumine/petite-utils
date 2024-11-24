@@ -55,7 +55,7 @@ repeatRun(fn, {
   immediate: true,
 })
 
-function fn(stop, repeatTimes) {
+function fn(repeatTimes, stop) {
   console.log('Hello, petite-utils! CommonJS')
   if (repeatTimes >= 5) {
     stop()
@@ -76,7 +76,7 @@ function fn(stop, repeatTimes) {
     immediate: true,
   })
 
-  function fn(stop, repeatTimes) {
+  function fn(repeatTimes, stop) {
     console.log('Hello, petite-utils! UMD')
     if (repeatTimes >= 5) {
       stop()
@@ -97,7 +97,7 @@ function fn(stop, repeatTimes) {
     immediate: true,
   })
 
-  function fn(stop, repeatTimes) {
+  function fn(repeatTimes, stop) {
     console.log('Hello, petite-utils! ES module')
     if (repeatTimes >= 5) {
       stop()

@@ -24,6 +24,8 @@ dist-ssr
 *.sw?
 docs/.vitepress/cache/*
 !.vitepress/cache/package.json
+docs/.vitepress/navigation.json
+docs/src
 
 .history
 auto-imports.d.ts

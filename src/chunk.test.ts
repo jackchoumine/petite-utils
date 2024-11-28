@@ -2,9 +2,11 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-08-18 00:34:19
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-08-18 01:00:33
+ * @LastEditTime: 2024-11-28 13:29:52
  * @Description : 数组分块
  */
+import { describe, expect, it } from 'vitest'
+
 import { chunk } from './chunk'
 
 describe('chunk', () => {

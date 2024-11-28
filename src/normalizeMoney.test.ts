@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { normalizeMoney } from './normalizeMoney'
 
 // 测试用例

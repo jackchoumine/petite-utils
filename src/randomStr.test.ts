@@ -5,6 +5,8 @@
  * @LastEditTime: 2024-07-11 18:55:00
  * @Description : randomStr test
  */
+import { describe, expect, it } from 'vitest'
+
 import { randomStr } from './randomStr'
 
 // TODO 随机数如何测试

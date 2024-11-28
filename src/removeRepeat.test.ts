@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { removeRepeat } from './removeRepeat'
 
 describe('removeRepeat', () => {

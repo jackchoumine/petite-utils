@@ -1,3 +1,12 @@
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-11-28 11:34:51
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2024-11-28 13:29:14
+ * @Description :
+ */
+import { describe, expect, it } from 'vitest'
+
 import { uuid } from './uuid'
 
 describe('uuid', () => {

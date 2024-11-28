@@ -1,27 +1,28 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /*
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 10:20:59
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 10:40:15
+ * @LastEditTime: 2024-11-28 13:32:17
  * @Description : 复制文本
  */
 /**
  * copy text
  * @param text some text you want to copy
- * @returns Promise<boolean>
+ * @returns
  */
 export function copy(text: string): Promise<boolean> {
   if (navigator.clipboard && navigator.permissions) {
     return navigator.clipboard
       .writeText(text)
-      .then(res => {
+      .then(() => {
         return Promise.resolve(true)
       })
-      .catch(err => {
+      .catch(() => {
         return Promise.resolve(false)
       })
   } else {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       const textArea = document.createElement('textArea')
       // @ts-ignore
       textArea.value = text

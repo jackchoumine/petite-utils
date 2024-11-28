@@ -10,7 +10,7 @@ export function throttle(fn, wait = 500, isImmediate = false) {
   let timer
   return (...rest) => {
     isImmediate && fn(...rest)
-    let now = Date.now()
+    const now = Date.now()
     clearTimeout(timer)
     if (now - last >= wait) {
       fn(...rest)

@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-08-18 00:32:26
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-08-18 01:00:25
+ * @LastEditTime: 2024-11-28 11:55:47
  * @Description : 数组分块
  */
 import { isNumber } from './type/type'
@@ -20,7 +20,7 @@ export function chunk<T>(array: T[], size: number): T[][] {
   if (!isNumber(size)) {
     throw new Error('第二个参数必须是一个数字')
   }
-  const result = []
+  const result: T[][] = []
   for (let i = 0; i < array.length; i += size) {
     result.push(array.slice(i, i + size))
   }

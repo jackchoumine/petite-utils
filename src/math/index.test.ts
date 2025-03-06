@@ -2,10 +2,10 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-08-18 14:57:15
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-11-28 13:30:04
+ * @LastEditTime: 2025-03-06 16:00:58
  * @Description :
  */
-import { describe, expect, it } from 'viit'
+import { describe, expect, it } from 'vitest'
 
 import { modulo, remainder } from './index'
 

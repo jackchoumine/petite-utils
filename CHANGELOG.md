@@ -1,4 +1,6 @@
+# Changelog
 
+## [0.0.20](https://github.com/jackchoumine/petite-utils/compare/v0.0.19...v0.0.20) (2025-03-22)
 
 ## [0.0.14](https://github.com/jackchoumine/petite-utils/compare/v0.0.13...v0.0.14) (2024-11-24)
 

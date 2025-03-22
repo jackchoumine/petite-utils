@@ -2,12 +2,14 @@ import { describe, expect, it } from 'vitest'
 
 import {
   isDate,
+  isEmpty,
   isEmptyStr,
   isError,
   isFalsy,
   isFalsyNon0,
   isFunction,
   isNull,
+  isNullish,
   isNumber,
   isNumerical,
   isObject,
@@ -192,6 +194,36 @@ describe('isNull', () => {
   })
 })
 
+describe('isUndefined', () => {
+  it('should return true if the argument is undefined', () => {
+    expect(isUndefined(undefined)).toBe(true)
+  })
+
+  it('should return false if the argument is not undefined', () => {
+    expect(isUndefined(null)).toBe(false)
+    expect(isUndefined(true)).toBe(false)
+    expect(isUndefined(false)).toBe(false)
+    expect(isUndefined(1)).toBe(false)
+    expect(isUndefined('1')).toBe(false)
+    expect(isUndefined(Symbol())).toBe(false)
+    expect(isUndefined([])).toBe(false)
+    expect(isUndefined({})).toBe(false)
+    expect(isUndefined(new Date())).toBe(false)
+    expect(isUndefined(/a/)).toBe(false)
+  })
+})
+
+describe('isNullish', () => {
+  it('should return true if the argument is null or undefined', () => {
+    expect(isNullish(undefined)).toBe(true)
+    expect(isNullish(null)).toBe(true)
+  })
+  it('should return false if the argument is NOT null and undefined', () => {
+    expect(isNullish('')).toBe(false)
+    expect(isNullish(2)).toBe(false)
+  })
+})
+
 describe('isError', () => {
   it('should return true if the argument is an error', () => {
     expect(isError(new Error())).toBe(true)
@@ -273,25 +305,6 @@ describe('isObject', () => {
   })
 })
 
-describe('isUndefined', () => {
-  it('should return true if the argument is undefined', () => {
-    expect(isUndefined(undefined)).toBe(true)
-  })
-
-  it('should return false if the argument is not undefined', () => {
-    expect(isUndefined(null)).toBe(false)
-    expect(isUndefined(true)).toBe(false)
-    expect(isUndefined(false)).toBe(false)
-    expect(isUndefined(1)).toBe(false)
-    expect(isUndefined('1')).toBe(false)
-    expect(isUndefined(Symbol())).toBe(false)
-    expect(isUndefined([])).toBe(false)
-    expect(isUndefined({})).toBe(false)
-    expect(isUndefined(new Date())).toBe(false)
-    expect(isUndefined(/a/)).toBe(false)
-  })
-})
-
 describe('isSymbol', () => {
   it('should return true if the argument is a symbol', () => {
     expect(isSymbol(Symbol())).toBe(true)
@@ -333,5 +346,15 @@ describe('isRegExp', () => {
 describe('isEmptyStr', () => {
   it('should return true if the argument is an empty string', () => {
     expect(isEmptyStr('')).toBe(true)
+  })
+})
+
+describe('isEmpty', () => {
+  it('should return true if the argument is an empty string or [] or {} or null or undefined', () => {
+    expect(isEmpty('')).toBe(true)
+    expect(isEmpty([])).toBe(true)
+    expect(isEmpty({})).toBe(true)
+    expect(isEmpty(undefined)).toBe(true)
+    expect(isEmpty(null)).toBe(true)
   })
 })

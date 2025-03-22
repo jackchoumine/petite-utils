@@ -133,6 +133,22 @@ function isFunction(value: any) {
   return false
 }
 
+function isEmpty(value: any) {
+  // ''
+  if (isEmptyStr(value)) return true
+  // []
+  if (Array.isArray(value)) return value.length === 0
+  // null undefined
+  if (isNullish(value)) return true
+  if (isObject(value)) {
+    for (var prop in value) {
+      if (value.hasOwnProperty(prop)) return false
+    }
+    return true
+  }
+  return false
+}
+
 export {
   type,
   isObject,
@@ -154,6 +170,7 @@ export {
   isTruthy,
   isFunction,
   isEmptyStr,
+  isEmpty,
   hasStr as isNonEmptyStr,
   hasStr,
 }

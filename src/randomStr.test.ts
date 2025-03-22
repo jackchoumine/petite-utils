@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 10:20:30
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-07-11 18:55:00
+ * @LastEditTime: 2025-03-22 20:01:17
  * @Description : randomStr test
  */
 import { describe, expect, it } from 'vitest'
@@ -10,7 +10,7 @@ import { describe, expect, it } from 'vitest'
 import { randomStr } from './randomStr'
 
 // TODO 随机数如何测试
-describe.skip('randomStr', () => {
+describe('randomStr', () => {
   describe('use default params', () => {
     it('should return a string of random length between 7 to 36 and start with letter', () => {
       const str = randomStr()
@@ -75,7 +75,7 @@ describe.skip('randomStr', () => {
     it('should return "min, max should be number, shouldStartLetter should be boolean" when min is not number', () => {
       const str = randomStr('10q', 10, true)
       expect(str).toBe(
-        'min, max should be number, shouldStartLetter should be boolean',
+        'min, max should be number, startLetter should be boolean',
       )
     })
   })

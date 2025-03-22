@@ -1,12 +1,19 @@
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-07-16 23:03:23
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2025-03-22 20:00:50
+ * @Description : 随机字符串
+ */
 import { isBoolean, isNumber } from './type/type'
 
 export function randomStr(
   min: number | string = 7,
   max: number | string = 36,
-  shouldStartLetter = true,
-): string {
-  if (!isNumber(min) || !isNumber(max) || !isBoolean(shouldStartLetter)) {
-    return 'min, max should be number, shouldStartLetter should be boolean'
+  startLetter = true,
+) {
+  if (!isNumber(+min) || !isNumber(+max) || !isBoolean(startLetter)) {
+    return 'min, max should be number, startLetter should be boolean'
   }
   if (+min < 0 || +max < 0) {
     return 'min, max should be positive number'
@@ -27,11 +34,11 @@ export function randomStr(
     const index = Math.floor(Math.random() * all.length)
     str += all[index]
   }
-  if (shouldStartLetter && /^[0-9]/.test(str)) {
+  if (startLetter && /^[0-9]/.test(str)) {
     const index = Math.floor(Math.random() * allLetters.length)
     str = allLetters[index] + str.slice(1)
   }
-  if (!shouldStartLetter && /^[a-zA-Z]/.test(str)) {
+  if (!startLetter && /^[a-zA-Z]/.test(str)) {
     const index = Math.floor(Math.random() * number.length)
     str = number[index] + str.slice(1)
   }

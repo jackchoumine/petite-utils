@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.0.18](https://github.com/jackchoumine/petite-utils/compare/v0.0.17...v0.0.18) (2025-03-22)
+
+
+### ✨ Features | 新功能
+
+* isEmpty ([60956d8](https://github.com/jackchoumine/petite-utils/commit/60956d8ae03284de7939ee3c7730fdeb90ff0fd6))
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 随机整数位数不稳定 ([fe8b871](https://github.com/jackchoumine/petite-utils/commit/fe8b8711ce11be6907552eca8aabc411240f4227))
+
+
+### ✅ Tests | 测试
+
+* 测试随机字符串 ([6938fb5](https://github.com/jackchoumine/petite-utils/commit/6938fb5d20c211d8990180d12ad4e7da2f783269))
+* repeatRun ([9f775db](https://github.com/jackchoumine/petite-utils/commit/9f775dbaac7cefd4f7e7c1de20ddae31abd5cc84))
+
 ## [0.0.17](https://github.com/jackchoumine/petite-utils/compare/v0.0.16...v0.0.17) (2025-03-06)
 
 ## [0.0.14](https://github.com/jackchoumine/petite-utils/compare/v0.0.13...v0.0.14) (2024-11-24)

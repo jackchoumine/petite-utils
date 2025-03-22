@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.0.19](https://github.com/jackchoumine/petite-utils/compare/v0.0.18...v0.0.19) (2025-03-22)
+
+
+### 📦 Chores | 其他更新
+
+* 部署 ph-page actions ([051c18c](https://github.com/jackchoumine/petite-utils/commit/051c18c998bbfb88ad95cb86adf159dd1c65a489))
+* 项目主页工作流 ([8e7c001](https://github.com/jackchoumine/petite-utils/commit/8e7c0010966f10f25edf6c36e28cb8812a3dcc37))
+* 项目主页工作流 ([32b2388](https://github.com/jackchoumine/petite-utils/commit/32b23880cdcf3e559c63249cc31d4e65115ef4d1))
+* 项目主页工作流 ([2f54df7](https://github.com/jackchoumine/petite-utils/commit/2f54df7de3d88514d3342468d2409d795a4b224a))
+* 项目主页工作流 ([a3ae606](https://github.com/jackchoumine/petite-utils/commit/a3ae60672c4db2a6854290cc1005a7004118cf5f))
+* 项目主页工作流 ([54defd9](https://github.com/jackchoumine/petite-utils/commit/54defd9b45057d61fa77467d3d02c61b081f56d5))
+* 项目主页工作流 ([0d715c3](https://github.com/jackchoumine/petite-utils/commit/0d715c334b7cfc6214e3e7c7545be7a736770f2e))
+* 项目主页工作流 ([7977b84](https://github.com/jackchoumine/petite-utils/commit/7977b8442bf435bf6aa9ba4e39b65b484e036d3b))
+* 项目主页工作流 ([2713a77](https://github.com/jackchoumine/petite-utils/commit/2713a778237e076678848f5ef153662df837f86c))
+* 修改 vitepress 根路径 ([9a2de1f](https://github.com/jackchoumine/petite-utils/commit/9a2de1ff41cbf2a653638607a981330278c215fd))
+* 修改部署工作流 ([6623a55](https://github.com/jackchoumine/petite-utils/commit/6623a55fd3734bc04b525edc897b8ff18f6866fe))
+* 修改工作流执行条件 ([c5f73ef](https://github.com/jackchoumine/petite-utils/commit/c5f73ef2e3c3202eaf20dab57666e033a29076e4))
+* 修改vitepress 配置 ([ef7a88d](https://github.com/jackchoumine/petite-utils/commit/ef7a88df5481d0ef931a28cb28d864f3ce184b18))
+* 移动文件 ([de8262e](https://github.com/jackchoumine/petite-utils/commit/de8262ef70d14aed93abd32afc0ab47203604760))
+
 ## [0.0.18](https://github.com/jackchoumine/petite-utils/compare/v0.0.17...v0.0.18) (2025-03-22)
 
 

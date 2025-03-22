@@ -28,7 +28,7 @@ jobs:
           cache: npm # pnpm
 
       - name: 安装 node 依赖
-        run: npm ci # pnpm i --frozen-lockfile
+        run: npm ci -f # pnpm i --frozen-lockfile
 
       - name: Build
         run: npm run docs:build # pnpm docs-build

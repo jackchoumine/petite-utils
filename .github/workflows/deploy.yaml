@@ -27,11 +27,14 @@ jobs:
         with:
           cache: npm # pnpm
 
+      - name: 安装 pnpm
+        run: npm i -g pnpm
+
       - name: 安装 node 依赖
-        run: npm ci -f # pnpm i --frozen-lockfile
+        run: pnpm i --frozen-lockfile
 
       - name: Build
-        run: npm run docs:build # pnpm docs-build
+        run: pnpm docs:build # pnpm docs-build
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.2

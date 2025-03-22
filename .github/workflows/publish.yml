@@ -1,6 +1,5 @@
-# .github/workflows/publish.yml
 
-name: Publish Package to npmjs # Name of the workflow
+name: 发布 npm 包 # Name of the workflow
 
 on: # Event that triggers the workflow
   push:
@@ -22,26 +21,9 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm i
-      - run: npm run build
+      - run: npm i -g pnpm
+      - run: pnpm i
+      - run: pnpm build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  # release github
-  # publish-github:
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: write
-  #     id-token: write
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: '18.x'
-  #         registry-url: 'https://registry.npmjs.org'
-  #     - run: npm install -g npm
-  #     - run: npm i -D husky@^9.1.6
-  #     - run: npm ci
-  #     - run: git config user.email "zhouqijun4job@163.com"
-  #     - run: git config user.name "release-auto"
-  #     - run: npx release-it --ci

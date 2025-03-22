@@ -8,7 +8,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { randomNum } from './randomNum'
-import { isNumber } from './type/type'
+import { isNumber } from '../type/type'
 
 describe('randomNum', () => {
   describe('use default params', () => {

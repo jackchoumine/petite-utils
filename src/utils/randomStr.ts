@@ -2,11 +2,18 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-07-16 23:03:23
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-22 20:00:50
+ * @LastEditTime: 2025-03-22 22:00:48
  * @Description : 随机字符串
  */
-import { isBoolean, isNumber } from './type/type'
+import { isBoolean, isNumber } from '../type/type'
 
+/**
+ * @group 工具函数
+ * @param [min=7] 最小长度
+ * @param [max=36] 最大长度
+ * @param [startLetter=true] 是否需要字母开头
+ * @returns
+ */
 export function randomStr(
   min: number | string = 7,
   max: number | string = 36,

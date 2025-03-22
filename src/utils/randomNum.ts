@@ -2,8 +2,14 @@
  * @Author      : ZhouQiJun
  * @Date        : 2025-03-06 16:02:51
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-22 20:34:42
+ * @LastEditTime: 2025-03-22 21:59:23
  * @Description : randomNum 函数 - 生成随机数
+ */
+
+/**
+ * @group 工具函数
+ * @param [length=6] 长度
+ * @returns
  */
 export function randomNum(length: number = 6) {
   const arr: number[] = []

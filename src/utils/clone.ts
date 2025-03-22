@@ -2,14 +2,14 @@
  * @Author      : ZhouQiJun
  * @Date        : 2023-04-29 20:19:57
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 02:56:46
+ * @LastEditTime: 2025-03-22 22:31:32
  * @Description : 深复制
  */
-import { type } from './type/type'
+import { type } from '../type/type'
 
 // import from from 'core-js/features/array/from'
 /**
- * 深度复制
+ * @group 工具函数
  * @param {any} source
  * @returns
  */

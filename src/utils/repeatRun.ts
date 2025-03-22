@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-22 20:38:13
+ * @LastEditTime: 2025-03-22 21:40:58
  * @Description : repeatRun 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -26,6 +26,7 @@ export interface RepeatOptions {
 
 /**
  * ## repeat call function
+ * @group 工具函数
  * @param fn will be called repeatly
  * @param param1.interval interval time default 1000
  * @param param1.immediate call fn immediately default false

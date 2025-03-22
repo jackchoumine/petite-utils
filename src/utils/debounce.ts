@@ -6,7 +6,7 @@
  * @Description : 防抖
  */
 /**
- * debounce function
+ * @group 工具函数
  * @param fn function need to debounce
  * @param wait debounce time default 500ms
  * @param isImmediate if true, execute immediately when trigger, default false

@@ -2,13 +2,13 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-08-18 00:32:26
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-11-28 11:55:47
+ * @LastEditTime: 2025-03-22 22:29:50
  * @Description : 数组分块
  */
-import { isNumber } from './type/type'
+import { isNumber } from '../type/type'
 
 /**
- * 数组分块
+ * @group 工具函数
  * @param array 数组
  * @param size 分块大小
  * @returns  返回分块后的数组

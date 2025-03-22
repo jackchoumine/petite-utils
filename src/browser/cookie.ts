@@ -2,11 +2,19 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-11-28 11:34:51
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-11-28 12:33:12
- * @Description :
+ * @LastEditTime: 2025-03-22 22:22:40
+ * @Description : 操作 cookie
  */
-import { isArray, isBoolean, isFunction, isNullish, isNumber, isObject } from './type/type';
+import { isArray, isBoolean, isFunction, isNullish, isNumber, isObject } from '../type';
 
+/**
+ * @group 浏览器
+ * @description 设置 cookie
+ * @param name cookie 名字
+ * @param value cookie 值
+ * @param expiresInDay 过期时间 天
+ * @returns
+ */
 export function setCookie(name: string, value: string | object | Array<any> | boolean = '', expiresInDay: number = 30) {
   if (!name) return false;
   if (!isNumber(expiresInDay)) expiresInDay = 30;
@@ -23,6 +31,13 @@ export function setCookie(name: string, value: string | object | Array<any> | bo
   return true;
 }
 
+
+/**
+ * @group 浏览器
+ * @description 查询 cookie
+ * @param name cookie 名字
+ * @returns
+ */
 export function getCookie(name: string): string {
   if (!name) return '';
   if (!document.cookie) return '';
@@ -43,11 +58,23 @@ export function getCookie(name: string): string {
   return '';
 }
 
+
+/**
+ * @group 浏览器
+ * @description 移除 cookie
+ * @param name cookie 名字
+ * @returns
+ */
 export function removeCookie(name: string) {
   setCookie(name, '', -1);
   return true;
 }
 
+/**
+ * @group 浏览器
+ * @description 移除所有 cookie
+ * @returns
+ */
 export function clearAllCookie() {
   const cookies = document.cookie.split(';');
   for (let i = 0; i < cookies.length; i++) {

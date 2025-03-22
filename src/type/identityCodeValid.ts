@@ -1,9 +1,8 @@
-import { isEmptyStr, isNullish, isNumber, isString } from './type/type'
+import { isEmptyStr, isNullish, isNumber, isString } from './type'
 
 /**
- *  * 身份证号合法性验证
- * 支持15位和18位身份证号
- * 支持地址编码、出生日期、校验位验证
+ * @group 类型检查
+ * @description 身份证号合法性验证，支持15位和18位身份证号，支持地址编码、出生日期、校验位验证
  * @param code
  * @returns {[boolean,string]} 该函数返回一个数组 [true,''] 或 [false,"身份证号格式错误"]
  * ============================================================================================

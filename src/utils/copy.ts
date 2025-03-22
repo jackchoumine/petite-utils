@@ -3,11 +3,12 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 10:20:59
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-11-28 13:32:17
+ * @LastEditTime: 2025-03-22 21:54:35
  * @Description : 复制文本
  */
 /**
- * copy text
+ * @group 工具函数
+ * @description  copy text
  * @param text some text you want to copy
  * @returns
  */

@@ -1,5 +1,16 @@
-import { isNumber, isString } from './type/type'
-
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2024-07-16 23:03:23
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2025-03-22 22:09:54
+ * @Description : 格式化金额
+ */
+import { isNumber, isString } from '../type/type'
+/**
+ * @group 工具函数
+ * @param money 金钱数额
+ * @returns
+ */
 export function normalizeMoney(money: number | string): string {
   if ((!isNumber(money) && !isString(money)) || money === '') {
     return '0'

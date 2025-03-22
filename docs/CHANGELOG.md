@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.0.24](https://github.com/jackchoumine/petite-utils/compare/v0.0.23...v0.0.24) (2025-03-22)
+
 ## [0.0.23](https://github.com/jackchoumine/petite-utils/compare/v0.0.22...v0.0.23) (2025-03-22)
 
 ## [0.0.21](https://github.com/jackchoumine/petite-utils/compare/v0.0.20...v0.0.21) (2025-03-22)

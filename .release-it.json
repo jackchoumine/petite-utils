@@ -19,7 +19,7 @@
   "plugins": {
     "@release-it/conventional-changelog": {
       "ignoreRecommendedBump": true,
-      "infile": "./docs/CHANGELOG.md",
+      "infile": "./CHANGELOG.md",
       "header": "# Changelog",
       "preset": {
         "name": "conventionalcommits",
@@ -31,33 +31,37 @@
             "section": "⚡ Improvements | 优化",
             "hidden": false
           },
-          { "type": "revert", "section": "⏪ Reverts | 回退", "hidden": false },
+          {
+            "type": "revert",
+            "section": "⏪ Reverts | 回退",
+            "hidden": false
+          },
           {
             "type": "chore",
             "section": "📦 Chores | 其他更新",
-            "hidden": false
+            "hidden": true
           },
           {
             "type": "docs",
             "section": "📝 Documentation | 文档",
             "hidden": false
           },
-          { "type": "style", "section": "💄 Styles | 风格", "hidden": false },
+          { "type": "format", "section": "💄 代码风格", "hidden": true },
           {
             "type": "refactor",
             "section": "♻ Code Refactoring | 代码重构",
             "hidden": false
           },
-          { "type": "test", "section": "✅ Tests | 测试", "hidden": false },
+          { "type": "test", "section": "✅ Tests | 测试", "hidden": true },
           {
             "type": "build",
             "section": "👷‍ Build System | 构建",
-            "hidden": false
+            "hidden": true
           },
           {
             "type": "ci",
             "section": "🔧 Continuous Integration | CI 配置",
-            "hidden": false
+            "hidden": true
           }
         ]
       }

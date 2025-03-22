@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2025-03-05 00:37:10
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-22 22:36:52
+ * @LastEditTime: 2025-03-23 00:26:20
  * @Description : vitepress 配置
  */
 import { defineConfig } from 'vitepress';
@@ -11,7 +11,7 @@ import navigation from './navigation.json';
 
 export default defineConfig({
   description: '一个开箱即用的 Javascript 工具库',
-  base: '/',
+  base: '/petite-utils',
   appearance: 'dark',
   markdown: {
     lineNumbers: true

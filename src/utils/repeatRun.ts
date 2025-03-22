@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-10-28 01:04:56
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-11-25 00:53:08
+ * @LastEditTime: 2025-03-22 20:38:13
  * @Description : repeatRun 函数 - 重复执行函数
  * 解决 setInterval 时间不精确的问题
  */
@@ -61,6 +61,7 @@ export function repeatRun(
   if (!isFunction(fn)) {
     throw new Error('first argument must be a function')
   }
+
   if (!isNumber(interval) || interval <= 0) {
     throw new Error('interval must be a positive number')
   }
@@ -76,13 +77,13 @@ export function repeatRun(
     ++repeatTimes
     fn(repeatTimes, stop, params)
   }
-  let timer = setTimeout(function repeatMe() {
+  let timer = setTimeout(function repeat() {
     if (hasStopped) {
       return
     }
     ++repeatTimes
     fn(repeatTimes, stop, params)
-    timer2 = setTimeout(repeatMe, interval)
+    timer2 = setTimeout(repeat, interval)
   }, interval)
   return stop
 }

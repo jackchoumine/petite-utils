@@ -2,12 +2,12 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-01 18:32:48
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-22 21:55:21
+ * @LastEditTime: 2025-03-22 22:42:35
  * @Description : 检查是否为中国大陆号码
  */
 
 /**
- * @group 工具函数
+ * @group 类型检查
  * @param number 待检测的手机号码
  * @returns
  */

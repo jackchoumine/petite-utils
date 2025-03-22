@@ -1,3 +1,10 @@
+/*
+ * @Author      : ZhouQiJun
+ * @Date        : 2025-03-05 00:37:10
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2025-03-22 22:36:52
+ * @Description : vitepress 配置
+ */
 import { defineConfig } from 'vitepress';
 import pkg from '../../package.json';
 import navigation from './navigation.json';
@@ -14,7 +21,7 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh',
       dir: '/',
-      title: 'MyUtils',
+      title: 'petite-utils',
       description: '一个开箱即用的 Javascript 工具库'
     }
   },
@@ -38,7 +45,8 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/hacxy/library-complete-template'
+        link: 'https://github.com/jackchoumine/petite-utils'
+
       }
     ],
     search: {

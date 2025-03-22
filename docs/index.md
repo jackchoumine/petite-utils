@@ -2,7 +2,7 @@
 layout: home
 title: Home
 hero:
-  name: MyUtils
+  name: petite-utils
   text: 开箱即用的 Javascript 工具库
   actions:
     - theme: brand
@@ -15,7 +15,7 @@ hero:
 
     - theme: alt
       text: Github
-      link: https://github.com/hacxy/library-complete-template
+      link: https://github.com/jackchoumine/petite-utils?tab=readme-ov-file#petite-utils
 
 features:
   - icon: 📦

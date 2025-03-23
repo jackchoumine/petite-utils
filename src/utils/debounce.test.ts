@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2025-03-23 13:27:22
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-23 19:28:37
+ * @LastEditTime: 2025-03-23 19:31:24
  * @Description : 防抖函数
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -48,7 +48,7 @@ describe('debounce', () => {
     expect(mockFn).toHaveBeenCalledTimes(1) // 第二次的调用
   })
 
-  it('should call the function immediately if isImmediate is true', () => {
+  it('参数 isImmediate 为 true ，立即调用', () => {
     const mockFn = vi.fn()
     const debouncedFn = debounce(mockFn, 100, true)
 

@@ -2,13 +2,13 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 03:04:01
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-23 21:06:42
+ * @LastEditTime: 2025-03-23 21:09:29
  * @Description : 节流
  */
 /**
  * @group 工具函数
  * @param fn 待节流的函数
- * @param interval 间隔时间，毫秒，默认 500
+ * @param interval 间隔时间，毫秒，默认 200
  * @param immediate 是否立即执行，默认 false
  * @returns
  */

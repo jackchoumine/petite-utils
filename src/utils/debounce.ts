@@ -2,20 +2,20 @@
  * @Author      : ZhouQiJun
  * @Date        : 2024-05-28 03:00:17
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2024-05-28 04:13:07
+ * @LastEditTime: 2025-03-23 21:13:48
  * @Description : 防抖
  */
 /**
  * @group 工具函数
  * @param fn function need to debounce
- * @param wait debounce time default 500ms
- * @param isImmediate if true, execute immediately when trigger, default false
- * @returns new function
+ * @param wait debounce time default 200ms
+ * @param immediate if true, execute immediately when trigger, default false
+ * @returns
  */
-export function debounce(fn, wait = 500, isImmediate = false) {
+export function debounce(fn, wait = 200, immediate = false) {
   let timer
   return (...rest) => {
-    isImmediate && !timer && fn(...rest)
+    immediate && !timer && fn(...rest)
     if (timer) {
       clearTimeout(timer)
     }

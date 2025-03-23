@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2025-03-23 13:27:22
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-23 19:31:24
+ * @LastEditTime: 2025-03-23 21:22:15
  * @Description : 防抖函数
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -20,18 +20,21 @@ describe('debounce', () => {
     vi.useRealTimers()
   })
 
-  it('函数调用后等待 500 毫秒才调用', () => {
+  it('触发后等待 200 毫秒才调用', () => {
     const mockFn = vi.fn()
     const debouncedFn = debounce(mockFn)
 
+    debouncedFn() // 多次触发，只调用最后一次
     debouncedFn()
-    expect(mockFn).not.toHaveBeenCalled() // 函数不应立即调用
+    debouncedFn()
 
-    vi.advanceTimersByTime(500) // 快进 500ms
-    expect(mockFn).toHaveBeenCalledTimes(1) // 函数应被调用一次
+    expect(mockFn).not.toHaveBeenCalled() // 没到延迟时间，不调用
+
+    vi.advanceTimersByTime(200) // 快进 500ms
+    expect(mockFn).toHaveBeenCalledTimes(1) // 等到延迟时间，调用
   })
 
-  it('等待时间内多次调用，只调用最后一次', () => {
+  it('等待时间内，再次触发，重新等待', () => {
     const mockFn = vi.fn()
     const debouncedFn = debounce(mockFn, 500)
 
@@ -39,47 +42,51 @@ describe('debounce', () => {
 
     vi.advanceTimersByTime(100) // 快进 100ms
 
+    debouncedFn() // 再次触发
     debouncedFn() // 重新等待 500ms
 
     vi.advanceTimersByTime(300) // 快进 300ms
     expect(mockFn).toHaveBeenCalledTimes(0) // 此时还没调用
 
-    vi.advanceTimersByTime(200) // 快进 500ms
-    expect(mockFn).toHaveBeenCalledTimes(1) // 第二次的调用
+    vi.advanceTimersByTime(200) // 累计快进 500ms
+    expect(mockFn).toHaveBeenCalledTimes(1)
   })
 
-  it('参数 isImmediate 为 true ，立即调用', () => {
+  it('参数 immediate 为 true ，立即调用', () => {
     const mockFn = vi.fn()
     const debouncedFn = debounce(mockFn, 100, true)
 
     debouncedFn() //  立即调用，不需等待
     expect(mockFn).toHaveBeenCalledTimes(1) // 立即调用一次
 
-    debouncedFn() // 等待 100ms
+    debouncedFn() // 第二次触发，重新等待 100ms
 
     vi.advanceTimersByTime(90) // 快进 90ms
-    expect(mockFn).toHaveBeenCalledTimes(1) // 第二次还没调用
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
     vi.advanceTimersByTime(5) // 再快进 5ms
-    expect(mockFn).toHaveBeenCalledTimes(1) // 第二次还是没调用
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
     vi.advanceTimersByTime(5) // 快进 100ms
     expect(mockFn).toHaveBeenCalledTimes(2) // 第二次才调用
   })
 
-  it('在等待时间内有调用，重新等待', () => {
+  it('参数 immediate 为 false ，不会立即调用', () => {
     const mockFn = vi.fn()
-    const debouncedFn = debounce(mockFn, 500)
+    const debouncedFn = debounce(mockFn, 100)
 
-    debouncedFn()
-    vi.advanceTimersByTime(300) // 快进 300ms
+    debouncedFn() // 第一次触发
+    expect(mockFn).toHaveBeenCalledTimes(0)
 
-    debouncedFn() // 再次调用，取消之前的定时器，重新等待
+    debouncedFn() // 第二次触发，重新等待 100ms
 
-    vi.advanceTimersByTime(400) // 快进 400ms 此时没还没调用
-    expect(mockFn).toHaveBeenCalledTimes(0) //
+    vi.advanceTimersByTime(90) // 快进 90ms
+    expect(mockFn).toHaveBeenCalledTimes(0)
 
-    vi.advanceTimersByTime(100) // 快进 500ms
-    expect(mockFn).toHaveBeenCalledTimes(1) // 第二次调用
+    vi.advanceTimersByTime(5) // 再快进 5ms
+    expect(mockFn).toHaveBeenCalledTimes(0)
+
+    vi.advanceTimersByTime(5) // 快进 100ms
+    expect(mockFn).toHaveBeenCalledTimes(1)
   })
 })

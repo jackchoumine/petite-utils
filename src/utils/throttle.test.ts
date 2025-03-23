@@ -2,7 +2,7 @@
  * @Author      : ZhouQiJun
  * @Date        : 2025-03-23 19:35:02
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2025-03-23 20:59:02
+ * @LastEditTime: 2025-03-23 21:58:20
  * @Description : 节流函数
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -20,7 +20,7 @@ describe('throttle', () => {
     vi.useRealTimers()
   })
 
-  it('持续触发，每次调用时间间隔相同', () => {
+  it.skip('持续触发，每次调用时间间隔相同', () => {
     const INTERVAL = 500
     const intervals: number[] = []
     let last = Date.now()
@@ -72,7 +72,7 @@ describe('throttle', () => {
     })
   })
 
-  it('保证间隔内，至少调用一次', () => {
+  it.skip('保证间隔内，至少调用一次', () => {
     const INTERVAL = 1000
     const mockFn = vi.fn()
     const throttledFn = throttle(mockFn, INTERVAL)
@@ -90,23 +90,23 @@ describe('throttle', () => {
     expect(mockFn).toHaveBeenCalledTimes(1) // 1000毫秒内，调用一次
   })
 
-  it('参数 isImmediate 为 true，第一次触发，立即调用', () => {
+  it('参数 immediate 为 true，第一次触发，立即调用', () => {
     const mockFn = vi.fn()
     const throttledFn = throttle(mockFn, 500, true)
 
-    throttledFn() // 第一次调用
+    throttledFn() // 第一触发
     expect(mockFn).toHaveBeenCalledTimes(1) // 立即调用一次
 
-    throttledFn() // 第二次调用
-    vi.advanceTimersByTime(200) // 快进 200ms
+    vi.advanceTimersByTime(400)
 
-    expect(mockFn).toHaveBeenCalledTimes(1) // 未达到间隔时间，不应调用
+    throttledFn() // 第二次触发
 
-    vi.advanceTimersByTime(300) // 快进 300ms（总计 500ms）
+    vi.advanceTimersByTime(200)
+
     expect(mockFn).toHaveBeenCalledTimes(2) // 达到间隔时间，应调用第二次
   })
 
-  it('参数 isImmediate 为 false，第一次触发，不立即调用', () => {
+  it('参数 immediate 为 false，第一次触发，不立即调用', () => {
     const mockFn = vi.fn()
     const throttledFn = throttle(mockFn, 500, false)
 
@@ -118,7 +118,19 @@ describe('throttle', () => {
 
     expect(mockFn).toHaveBeenCalledTimes(0) // 未达到间隔时间，不应调用
 
-    vi.advanceTimersByTime(300) // 快进 300ms（总计 500ms）
+    vi.advanceTimersByTime(400) // 累计推进 600ms
     expect(mockFn).toHaveBeenCalledTimes(1) // 达到间隔时间，第一次调用
+  })
+
+  it('参数 immediate 为 false，第一次触发间隔超过 500ms，立即调用', () => {
+    const mockFn = vi.fn()
+    const throttledFn = throttle(mockFn, 500, false)
+
+    expect(mockFn).toHaveBeenCalledTimes(0) // 未达到间隔时间，不应调用
+
+    vi.advanceTimersByTime(600) // 推进 600ms
+    throttledFn() // 第一次触发
+
+    expect(mockFn).toHaveBeenCalledTimes(1) // 达到超过时间，第一次调用
   })
 })

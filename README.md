@@ -9,35 +9,6 @@ features:
 - tree-shakable.
 - high unit test coverage.
 
-| function    | coverage |
-| ----------- | -------- |
-| debounce    | 100%     |
-| throttle    | 100%     |
-| randomNum   | 100%     |
-| randomStr   | 100%     |
-| repeatRun   | 100%     |
-| chunk       | 100%     |
-| uuid        | 100%     |
-| isNull      | 100%     |
-| isUndefined | 100%     |
-| isNullish   | 100%     |
-| isObject    | 100%     |
-| isArray     | 100%     |
-| isBoolean   | 100%     |
-| isDate      | 100%     |
-| isError     | 100%     |
-| isNumber    | 100%     |
-| isNumerical | 100%     |
-| isString    | 100%     |
-| isSymbol    | 100%     |
-| isRegExp    | 100%     |
-| isPrimitive | 100%     |
-| isFalsy     | 100%     |
-| isTruthy    | 100%     |
-| isFunction  | 100%     |
-| isEmptyStr  | 100%     |
-| isEmpty     | 100%     |
-
 ## Installation
 
 ```bash
@@ -106,5 +77,36 @@ repeatRun(
   { interval: 1000 },
 )
 ```
+
+## unit test coverage
+
+| function    | coverage |
+| ----------- | -------- |
+| debounce    | 100%     |
+| throttle    | 100%     |
+| randomNum   | 100%     |
+| randomStr   | 100%     |
+| repeatRun   | 100%     |
+| chunk       | 100%     |
+| uuid        | 100%     |
+| isNull      | 100%     |
+| isUndefined | 100%     |
+| isNullish   | 100%     |
+| isObject    | 100%     |
+| isArray     | 100%     |
+| isBoolean   | 100%     |
+| isDate      | 100%     |
+| isError     | 100%     |
+| isNumber    | 100%     |
+| isNumerical | 100%     |
+| isString    | 100%     |
+| isSymbol    | 100%     |
+| isRegExp    | 100%     |
+| isPrimitive | 100%     |
+| isFalsy     | 100%     |
+| isTruthy    | 100%     |
+| isFunction  | 100%     |
+| isEmptyStr  | 100%     |
+| isEmpty     | 100%     |
 
 ## more usages see [petite-utils -- document](https://jackchoumine.github.io/petite-utils/)

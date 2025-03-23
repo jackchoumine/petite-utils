@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.25](https://github.com/jackchoumine/petite-utils/compare/v0.0.24...v0.0.25) (2025-03-23)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复 throttle 立即执行 和 在间隔内，至少保证一次调用 ([6b6d8c5](https://github.com/jackchoumine/petite-utils/commit/6b6d8c5696a60f75de8a0e5e8d8fb83794a228f0))
+
+
+### 📝 Documentation | 文档
+
+* 更新注释 ([3a425ec](https://github.com/jackchoumine/petite-utils/commit/3a425ec6503c8e9f5740fb7921326369c52383cc))
+
 ## [0.0.24](https://github.com/jackchoumine/petite-utils/compare/v0.0.23...v0.0.24) (2025-03-22)
 
 ## [0.0.23](https://github.com/jackchoumine/petite-utils/compare/v0.0.22...v0.0.23) (2025-03-22)
